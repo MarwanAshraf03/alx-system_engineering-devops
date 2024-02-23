@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# a script to achieve ssh connection
+ssh -i ~/.ssh/school ubuntu@server01

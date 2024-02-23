@@ -1,0 +1,6 @@
+#!/bin/bash
+chmod 777 *
+chmod ugo-x README.md
+git add .
+git commit -m 'update'
+git push

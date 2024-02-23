@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Process and PID file task
+touch /var/run/myscript.pid
+echo "$$" > /var/run/myscript.pid
+for (( ; ; ))
+do
+echo "To infinity and beyond"
+trap "echo \"I hate the kill command\"; rm /var/run/myscript.pid;break" SIGTERM
+trap "echo \"Y U no love me?!\"" SIGINT
+trap "rm /var/run/myscript.pid;break" SIGQUIT
+sleep 2
+done

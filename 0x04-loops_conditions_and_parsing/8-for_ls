@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script prints all files in current directory after first '-'
+for i in *
+do
+echo "${i#*-}"
+done

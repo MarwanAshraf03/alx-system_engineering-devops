@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# a comment
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html >/dev/null
+sudo service nginx restart
+sed -i 's/http {/http { server { listen 80; server_name 35.168.7.56; local \/redirect_me\/ { return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4}}/' /etc/nginx/nginx.conf
+sudo service nginx restart
