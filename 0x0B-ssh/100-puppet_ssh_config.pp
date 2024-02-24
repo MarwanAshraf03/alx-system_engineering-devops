@@ -1,3 +1,4 @@
+# a comment
 Host {ubuntu:
 	'User' => 'ubuntu',
 	'Hostname' => '54.172.106.250',
