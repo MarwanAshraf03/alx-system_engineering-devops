@@ -1,8 +1,6 @@
-# a comment
-class { 'ssh':
-	options => {
-		'User' => 'ubuntu',
-		'Hostname' => '54.172.106.250',
-		'HostKey' => '~/.ssh/school'
-	}
+Host {ubuntu:
+	'User' => 'ubuntu',
+	'Hostname' => '54.172.106.250',
+	'IdentityFile' => '~/.ssh/school',
+	'PasswordAuthentication' => 'no'
 }
