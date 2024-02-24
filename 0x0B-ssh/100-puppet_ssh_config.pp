@@ -1,3 +1,4 @@
+# a comment
 class { 'ssh':
 	options => {
 		'User' => 'ubuntu',
