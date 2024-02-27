@@ -9,9 +9,7 @@ echo "http {
         server {
                 listen 80;
                 root /var/www/html/;
-                location / {
-                       try_files /index.nginx-debian.html =404;
-                }
+                index index.nginx-debian.html;
                 location /redirect_me/ {
                     return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
                 }
