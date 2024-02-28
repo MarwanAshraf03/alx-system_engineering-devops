@@ -1,3 +1,4 @@
+# Puppet code to install Flask version 2.1.0 using pip3
 exec {command => ['/bin/apt-get', 'update; -y']}
 exec {command => ['/bin/apt-get', 'install nginx; -y']}
 exec {command => ['/bin/echo', 'Hello World! > /var/www/html/index.nginx-debian.html']}
