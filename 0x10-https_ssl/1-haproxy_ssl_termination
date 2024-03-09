@@ -1,0 +1,12 @@
+frontend fend
+        bind *:80
+        timeout client 60s
+        bind *:443 ssl crt ./fullchain1.pem
+        mode http
+        default_backend bacck
+backend bacck
+        mode http
+        timeout connect 10s
+        timeout server 10s
+        server web-01 54.197.49.59
+        server web-02 52.91.134.65
