@@ -40,7 +40,7 @@ frontend f
 
 frontend f_ss
         bind *:443 ssl crt /etc/haproxy/new_key.pem
-        mode http
+        mode https
         default_backend back
 
 backend back
