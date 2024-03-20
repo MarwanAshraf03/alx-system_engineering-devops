@@ -33,16 +33,40 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend f
-        bind *:80
-        mode http
-        default_backend back
+#frontend f
+#        bind *:80
+#        bind *:443 ssl crt /etc/haproxy/new_key.pem
+#        http-request redirect scheme https unless {ssl_fc}
+#        mode http
+#        default_backend back
 
-frontend f_ss
-        bind *:443 ssl crt /etc/haproxy/new_key.pem
-        mode http
-        default_backend back
+#frontend f_ss
+#       bind *:443 ssl crt /etc/haproxy/new_key.pem
+#       mode tcp
+#       default_backend back
 
-backend back
-        server web-01 54.197.49.59
-        server web-02 52.91.134.65
+# backend back
+        # server web-01 54.197.49.59
+        # server web-02 18.206.197.251
+
+frontend fe-http
+    bind *:80
+    mode http
+
+    default_backend be
+
+frontend fe-https
+    bind *:443 ssl crt /etc/ssl/www.marwan-ashraf.tech/www.marwan-ashraf.tech.pem
+    reqadd X-Forwarded-Proto:\ https
+    acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+    use_backend letsencrypt-backend if letsencrypt-acl
+
+    default_backend be
+
+backend letsencrypt-backend
+    server letsencrypt 127.0.0.1:8888
+
+backend be
+    redirect scheme https if !{ ssl_fc }
+    server web-01 54.197.49.59
+    server web-02 18.206.197.251
