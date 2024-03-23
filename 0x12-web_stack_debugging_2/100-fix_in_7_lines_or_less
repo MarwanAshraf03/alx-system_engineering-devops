@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # a comment
-#events {}" > /etc/nginx/nginx.conf
-# Script for restart nginx running as user nginx on 8080
+# a comment
 chmod 777 /etc/nginx/nginx.conf
 pkill apache2
 sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
