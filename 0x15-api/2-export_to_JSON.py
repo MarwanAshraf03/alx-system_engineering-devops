@@ -20,4 +20,4 @@ if __name__ == "__main__":
         str(id): dictlist
     }
     with open(f'{argv[1]}.json', 'w') as f:
-            f.write(j)
+        f.write(j)
