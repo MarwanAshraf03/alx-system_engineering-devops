@@ -12,7 +12,7 @@ if __name__ == "__main__":
     for i in toddata:
         if i['completed']:
             done += 1
-    print(f"Employee {user_data['name']} is done with tasks({done}/{total})")
+    print(f"Employee {user_data['name']} is done with tasks({done}/{total}):")
     for i in toddata:
         if i['completed']:
             print(f"\t {i['title']}")
