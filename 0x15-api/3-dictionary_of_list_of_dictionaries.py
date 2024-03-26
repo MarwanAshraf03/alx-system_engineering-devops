@@ -9,7 +9,7 @@ if __name__ == "__main__":
     bdict = {}
     for i in u:
         li = []
-        id = i['userId']
+        id = i['id']
         name = i['username']
         d = json.loads(requests.get(f"{link}/{id}"
                                     f"/todos").content.decode('utf8'))
