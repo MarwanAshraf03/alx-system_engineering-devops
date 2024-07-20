@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# a comment
+sudo apt-get -y update
+sudo apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page." > /var/www/html/new_err.html
+echo "http {
+    include mime.types;
+
+    server {
+        listen 80;
+        root /var/www/html/;
+        index index.nginx-debian.html;
+        add_header X-Served-By \"\$hostname\";
+    
+        location /redirect_me/ {
+            return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        }
+
+        error_page 404 /new_err.html;
+
+        location = /new_err.html {
+            internal;
+        }
+    }
+}
+events {}" > /etc/nginx/nginx.conf
+sudo service nginx restart

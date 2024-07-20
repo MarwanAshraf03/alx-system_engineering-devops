@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script is printing contents of passwd file only with user name, user id and Home directory path for the user
+while IFS= read -r line
+do
+cut -d ":" -f 1-7 <<< "$line"
+done < "/etc/passwd"

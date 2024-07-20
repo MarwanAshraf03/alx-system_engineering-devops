@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# prints bash and its pid in a [PID bash] format
+pgrep bash -l

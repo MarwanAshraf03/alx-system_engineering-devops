@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# a comment
+sudo apt update
+sudo apt install apache2
+echo "<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html/
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>" > /etc/apache2/sites-enabled/000-default.conf
+sudo service apache2 restart
+
