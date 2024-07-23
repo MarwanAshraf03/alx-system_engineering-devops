@@ -1,0 +1,4 @@
+use tyrell_corp;
+create table nexus6 ( id int primary key, name varchar(55));
+insert into nexus6 values (1, "Leon");
+grant select on tyrell_corp.nexus6 to 'holberton_user'@'localhost';
