@@ -13,7 +13,8 @@ def top_ten(subreddit):
     resp = requests.get(
         f"https://www.reddit.com/r/{subreddit}/hot.json?limit=9")
     if resp.status_code != 200:
-        return (0)
+        print(None)
+        return
     count = 1
     for i in json.loads(resp.text)['data']['children']:
         print(count, i['data']['title'])
