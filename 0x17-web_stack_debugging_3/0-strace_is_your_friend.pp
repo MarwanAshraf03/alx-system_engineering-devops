@@ -2,7 +2,7 @@
 
 file { '/var/www/html/index.html':
   ensure  => file,
-  content => file('./hi.txt'),
+  source => 'file:///0x17-web_stack_debugging_3/hi.txt',
   owner   => 'root',
   group   => 'root',
   mode    => '0644',
