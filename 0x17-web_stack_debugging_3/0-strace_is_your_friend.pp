@@ -2,9 +2,8 @@
 
 file { '/var/www/html/index.html':
   ensure  => file,
-  source => 'file:///0x17-web_stack_debugging_3/hi.txt',
+  source => 'file:///hi.txt',
   owner   => 'root',
   group   => 'root',
   mode    => '0644',
 }
-
