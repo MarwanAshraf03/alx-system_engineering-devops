@@ -1,9 +1,2 @@
-# This Puppet manifest creates /var/www/html/index.html with the content from hi/hi.txt.
-
-file { '/var/www/html/index.html':
-  ensure  => file,
-  source => 'file:///hi.txt',
-  owner   => 'root',
-  group   => 'root',
-  mode    => '0644',
-}
+# Fixes wordpress config file typo
+exec { '/usr/bin/env sed -i "s/phpp/php/g" /var/www/html/wp-settings.php': }
