@@ -7,3 +7,4 @@ file { '/var/www/html/index.html':
   group   => 'root',
   mode    => '0644',
 }
+
