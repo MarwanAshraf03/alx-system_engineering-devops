@@ -7,8 +7,8 @@ echo "Ceci n'est pas une page." > /var/www/html/new_err.html
 echo "http {
         include mime.types;
         upstream backserver {
-                server 54.197.49.59;
-                server 52.91.134.65;
+                server 54.236.33.76;
+                server 52.91.118.133;
         }
         server {
                 listen 80;
