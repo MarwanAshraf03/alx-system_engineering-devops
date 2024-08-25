@@ -4,10 +4,10 @@ http {
         server {
                 listen 80;
                 #root /var/www/html/;
-                #root /AirBnB_clone_v4/web_dynamic/static
+                root /home/ubuntu/AirBnB_clone_v4/web_dynamic/;
                 index index.nginx-debian.html;
                 location / {
-                        proxy_pass http://127.0.0.1:5003;
+                        proxy_pass http://127.0.0.1:5003/2-hbnb/;
                 }
                 location /hbnb_static {
                     alias /data/web_static/current/;
